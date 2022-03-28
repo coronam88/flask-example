@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+  <div class="page-header"><h1>Hello, {{ name }}!</h1></div>
+</div>
+<ol class="list-group">
+    {% for item in some_list %}
+    <li class="list-item">{{ item|capitalize }}</li>
+    {% endfor %}
+</ol>
+
+<div>
+  <h1>Ahora es {{ moment(current_time).format('LLL') }}</h1>
+  <p>Eso fue {{ moment(current_time).fromNow(refresh=True) }}</p>
+</div>
+{% endblock %}
